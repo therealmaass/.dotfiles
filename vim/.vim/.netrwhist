@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/home/soeren/.dotfiles'
+let g:netrw_dirhist_6='/home/soeren/.config'
+let g:netrw_dirhist_5='/home/soeren/.config/htop'
+let g:netrw_dirhist_4='/home/soeren/.config'
+let g:netrw_dirhist_3='/home/soeren'
+let g:netrw_dirhist_2='/mnt/e'
+let g:netrw_dirhist_1='/home/soeren/.vim'
