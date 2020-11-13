@@ -39,6 +39,8 @@ syntax on
 " => Advanced configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set wildmode=longest,list,full
+"fix indentation in yaml files (yaml req. 2 space indentation
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugin configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
