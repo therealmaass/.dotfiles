@@ -36,7 +36,7 @@ set number
 set history=200
 syntax on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Advanced configuration
+" => Advanced configuration TEST
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set wildmode=longest,list,full
 "fix indentation in yaml files (yaml req. 2 space indentation
