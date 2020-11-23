@@ -36,7 +36,7 @@ set number
 set history=200
 syntax on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Advanced configuration TEST
+" => Advanced configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set wildmode=longest,list,full
 "fix indentation in yaml files (yaml req. 2 space indentation
@@ -78,6 +78,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/goyo.vim'
 Plug 'SirVEr/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'vim-airline/vim-airline'
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => WSL yank support
