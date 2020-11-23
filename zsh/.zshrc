@@ -96,7 +96,10 @@ source $HOME/.config/ranger/shell_automatic_cd
 _comp_options+=(globdots)
 # vi mode  
 bindkey -v
-export KEYTIMEOUT=1
+# vi mode: set jj to exit insert mode on commandline 
+bindkey -M viins 'jj' vi-cmd-mode
+# set KEYTIMEOUT to 25 miliseconds so that exit insert mode jj works 
+export KEYTIMEOUT=25
 # Enable explicit history backwards search due to bindkey -v configuration
 bindkey '^R' history-incremental-search-backward
 # Edit line in vim with ctrl-e:
@@ -115,12 +118,28 @@ eval "$(sh "$HOME/.wsl/eopen-ecd-0.12.0-x64/init.sh")"
 #Set vim to default Editor
 export VISUAL=vim
 export EDITOR=vim
-#Aliases
+#Enable colors so that tmux sessions are colored
+export TERM=xterm-256color
+##########
+#Aliases #
+##########
+#Open .zshrc in vim
 alias zshconfig="vim ~/.zshrc"
+#Open .tmux.conf in vim
+alias tmuxconfig="vim ~/.tmux.conf"
+#List tmux sessions
+alias tls="tmux ls"
+#Attaches tmux to the last session; creates a new session if none exists
+alias t="tmux attach || tmux new-session"
+#Attaches tmux to a session (example: ta test)
+alias ta="tmux attach -t"
+#Opens windows user download folder on wsl2 machine
 alias wdl="cd /mnt/d/user_soeren/Downloads"
+#Opens windows explorer in current dir
 alias we="explorer.exe ."
 alias ranger="ranger_cd"
 alias r="ranger_cd"
+alias zshreload="source ~/.zshrc"
 bindkey -s '^O' 'ranger_cd\n'
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8

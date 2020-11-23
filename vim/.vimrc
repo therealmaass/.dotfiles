@@ -39,7 +39,7 @@ syntax on
 " => Advanced configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set wildmode=longest,list,full
-"fix indentation in yaml files (yaml req. 2 space indentation
+"fix indentation in yaml files (yaml req. 2 space indentation) important for docker compose
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugin configuration
