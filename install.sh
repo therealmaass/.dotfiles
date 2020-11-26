@@ -26,6 +26,7 @@ if [ $? != 0 ]; then
             echo "##############################################"
             sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended && git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
             curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+            git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
             echo "###############################################"
             echo "# Install Oh-my-zsh & P10K done!             #"
             echo "###############################################"
@@ -33,7 +34,7 @@ if [ $? != 0 ]; then
             echo "THIS IS ARCH"
             echo "##############################################"
             echo "# Installing standard tools:                 #"
-            echo "# $(tools)                                   #"
+            echo "$toolsprint"
             echo "##############################################"
             sleep 3
             echo "##############################################"
@@ -47,6 +48,7 @@ if [ $? != 0 ]; then
             echo "##############################################"
             sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended && git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
             curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+            git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
             echo "###############################################"
             echo "# Install Oh-my-zsh & P10K done!             #"
             echo "###############################################"
