@@ -140,6 +140,9 @@ alias we="explorer.exe ."
 alias ranger="ranger_cd"
 alias r="ranger_cd"
 alias zshreload="source ~/.zshrc"
+#Add -h parameter for du and df command
+alias du="du -h"
+alias df="df -h"
 bindkey -s '^O' 'ranger_cd\n'
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
