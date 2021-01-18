@@ -81,6 +81,7 @@ plugins=(
 	history
 	docker
 	zsh-syntax-highlighting
+    zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -120,6 +121,9 @@ export VISUAL=vim
 export EDITOR=vim
 #Enable colors so that tmux sessions are colored
 export TERM=xterm-256color
+#Set bindkey for zsh-autosuggestions plugin
+#https://github.com/zsh-users/zsh-autosuggestions
+bindkey '^ ' autosuggest-accept
 ##########
 #Aliases #
 ##########
@@ -127,6 +131,7 @@ export TERM=xterm-256color
 alias zshconfig="vim ~/.zshrc"
 #Open .tmux.conf in vim
 alias tmuxconfig="vim ~/.tmux.conf"
+alias rangerconfig="vim ~/.config/ranger/rc.conf"
 #List tmux sessions
 alias tls="tmux ls"
 #Attaches tmux to the last session; creates a new session if none exists
