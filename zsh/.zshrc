@@ -149,6 +149,8 @@ alias zshreload="source ~/.zshrc"
 alias du="du -h"
 alias df="df -h"
 bindkey -s '^O' 'ranger_cd\n'
+# Run WSL automount script
+alias wslautomount="~/.scripts/wsl_automount.sh"
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
