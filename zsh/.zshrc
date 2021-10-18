@@ -151,6 +151,8 @@ alias df="df -h"
 bindkey -s '^O' 'ranger_cd\n'
 # Run WSL automount script
 alias wslautomount="~/.scripts/wsl_automount.sh"
+# ip in color
+alias ip="ip --color=auto"
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 

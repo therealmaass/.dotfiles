@@ -28,6 +28,7 @@ set whichwrap+=<,>
 set mousehide
 set hlsearch
 set incsearch
+set ignorecase
 "set clipboard^=unnamed,unnamedplus
 set clipboard=unnamedplus
 set hidden
