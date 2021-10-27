@@ -93,6 +93,14 @@ SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
 # Ranger Script: after exit Ranger switch to last ranger dir
 source $HOME/.config/ranger/shell_automatic_cd
+# WSL-Scripts: start ~/.wsl/startup.sh which starts necesseary services to run withoud sudo password auth:
+# For NFS:
+# - sudo service rpcbind start
+# - sudo systemctl start rpcbind
+# For automatic mlocate updatedb
+# - sudo updatedb
+# Look config files in /etc/sudoers.d/ dir for start without root auth
+source $HOME/.wsl/startup.sh
 # Autocomplete hidden dotfiles:
 _comp_options+=(globdots)
 # vi mode  
@@ -153,6 +161,8 @@ bindkey -s '^O' 'ranger_cd\n'
 alias wslautomount="~/.scripts/wsl_automount.sh"
 # ip in color
 alias ip="ip --color=auto"
+# cp with more information
+alias cp="cp -iv"
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 

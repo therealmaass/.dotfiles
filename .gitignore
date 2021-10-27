@@ -1,0 +1,3 @@
+# ignore ranger coloscheme specific temp files:
+ranger/.config/ranger/colorschemes/__init__.py
+ranger/.config/ranger/colorschemes/__pycache__/
