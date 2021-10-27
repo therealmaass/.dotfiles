@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 #Define standard tools to be installed:
-tools="zsh vim tmux ranger stow wget curl git"
+tools="zsh neovim vim  tmux ranger stow wget curl git"
 toolsprint="# ${tools}     #"
 cd ~
 which $tools > /dev/null 2>&1
