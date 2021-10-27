@@ -163,6 +163,8 @@ alias wslautomount="~/.scripts/wsl_automount.sh"
 alias ip="ip --color=auto"
 # cp with more information
 alias cp="cp -iv"
+# Set neovim (nvim) as a vim replacement
+alias vim=nvim
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
