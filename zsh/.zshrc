@@ -165,6 +165,7 @@ alias ip="ip --color=auto"
 alias cp="cp -iv"
 # Set neovim (nvim) as a vim replacement
 alias vim=nvim
+alias v=nvim
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
