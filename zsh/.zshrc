@@ -100,7 +100,7 @@ source $HOME/.config/ranger/shell_automatic_cd
 # For automatic mlocate updatedb
 # - sudo updatedb
 # Look config files in /etc/sudoers.d/ dir for start without root auth
-source $HOME/.wsl/startup.sh
+#source $HOME/.wsl/startup.sh
 # Autocomplete hidden dotfiles:
 _comp_options+=(globdots)
 # vi mode  
