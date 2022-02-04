@@ -10,7 +10,7 @@ let mapleader = " "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Standard Stuff 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme jellybeans
+"colorscheme jellybeans
 "filetype plugin indent on
 filetype off
 set nocompatible
@@ -53,6 +53,9 @@ map <Leader>f :Goyo \| set linebreak<CR>
 "Set Tab jumping for https://github.com/SirVer/ultinips
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+"Set default colorscheme for airline plugin
+"See https://github.com/vim-airline/vim-airline-themes for reference
+let g:airline_theme='gruvbox'
 "###############################################################
 " PLUGIN CONFIGURATION FOR MARKDOWN-PREVIEW SEE
 " https://github.com/iamcco/markdown-preview.nvim for reference
@@ -199,6 +202,8 @@ Plug 'junegunn/goyo.vim'
 Plug 'SirVEr/ultisnips' | Plug 'honza/vim-snippets'
 "Pretty status/tabline for vim https://github.com/vim-airline/vim-airline
 Plug 'vim-airline/vim-airline'
+"A collection of themes for vim-airline
+Plug 'vim-airline/vim-airline-themes'
 " Markdown live preview https://github.com/iamcco/markdown-preview.nvim
 " If you don't have nodejs and yarn
 " use pre build, add 'vim-plug' to the filetype list so vim-plug can update this plugin
@@ -207,7 +212,12 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 "Personal Wiki for Vim https://github.com/vimwiki/vimwiki
 " resource: http://vimwiki.github.io/
 Plug 'vimwiki/vimwiki'
+"Retro groove color scheme for Vim
+" see: https://github.com/morhetz/gruvbox
+Plug 'morhetz/gruvbox'
 call plug#end()
+"Gruvbox colorscheme initialization
+autocmd vimenter * ++nested colorscheme gruvbox
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => WSL yank support
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
