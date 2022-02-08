@@ -166,6 +166,7 @@ alias cp="cp -iv"
 # Set neovim (nvim) as a vim replacement
 alias vim=nvim
 alias v=nvim
+alias tmm="~/.tmm_3.1.16.1/tinyMediaManager.sh"
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
