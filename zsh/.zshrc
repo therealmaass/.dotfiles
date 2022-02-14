@@ -80,6 +80,7 @@ plugins=(
 	cp
 	history
 	docker
+	docker-compose
     zsh-autosuggestions
 	zsh-syntax-highlighting
 )
