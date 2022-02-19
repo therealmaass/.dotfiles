@@ -81,6 +81,7 @@ plugins=(
 	history
 	docker
 	docker-compose
+    sudo
     zsh-autosuggestions
 	zsh-syntax-highlighting
 )

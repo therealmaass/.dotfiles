@@ -68,3 +68,8 @@ else
     echo "###############################################"
     which $tools
 fi
+
+if [[ ! -e ~/.cache/zsh/history ]] && [[ ! -d ~/.cache ]]; then
+    mkdir -p ~/.cache/zsh
+    touch ~/.cache/zsh/history
+fi
