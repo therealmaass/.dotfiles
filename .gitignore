@@ -1,6 +1,10 @@
 # ignore ranger coloscheme specific temp files:
 ranger/.config/ranger/colorschemes/__init__.py
 ranger/.config/ranger/colorschemes/__pycache__/
+ranger_wsl/.config/ranger/colorschemes/__init__.py
+ranger_wsl/.config/ranger/colorschemes/__pycache__/
 # ignore ranger plugin specific temp files:
 ranger/.config/ranger/plugins/__init__.py
 ranger/.config/ranger/plugins/__pycache__/
+ranger_wsl/.config/ranger/plugins/__init__.py
+ranger_wsl/.config/ranger/plugins/__pycache__/
