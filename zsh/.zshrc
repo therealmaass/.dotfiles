@@ -93,6 +93,8 @@ source $ZSH/oh-my-zsh.sh
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
+# Set CapsLock key to behave like a CTRL key
+setxkbmap -layout de option ctrl:nocaps
 # Ranger Script: after exit Ranger switch to last ranger dir
 source $HOME/.config/ranger/shell_automatic_cd
 # WSL-Scripts: start ~/.wsl/startup.sh which starts necesseary services to run withoud sudo password auth:
