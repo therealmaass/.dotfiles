@@ -93,8 +93,6 @@ source $ZSH/oh-my-zsh.sh
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
-# Set CapsLock key to behave like a CTRL key
-setxkbmap -layout de option ctrl:nocaps
 # Ranger Script: after exit Ranger switch to last ranger dir
 source $HOME/.config/ranger/shell_automatic_cd
 # WSL-Scripts: start ~/.wsl/startup.sh which starts necesseary services to run withoud sudo password auth:
@@ -144,6 +142,8 @@ alias zshconfig="vim ~/.zshrc"
 #Open .tmux.conf in vim
 alias tmuxconfig="vim ~/.tmux.conf"
 alias rangerconfig="vim ~/.config/ranger/rc.conf"
+# Set CapsLock key to behave like a CTRL key
+alias capslockswap="setxkbmap -layout de -option ctrl:nocaps"
 #List tmux sessions
 alias tls="tmux ls"
 #Attaches tmux to the last session; creates a new session if none exists
