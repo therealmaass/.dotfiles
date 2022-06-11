@@ -1,0 +1,11 @@
+#!/usr/bin/zsh
+#Create new custom tmux session with the name debug and opening a window with splitted panes running tail  and htop
+#tmux new-session -s 'debug' -d 
+#tmux split-window -v -p 35 'tail -F /var/log/syslog'
+#tmux split-window -h -p 75 -t 0 'htop'
+#tmux attach-session -t 'debug'
+tmux new-session -s 'debug' \; \
+  send-keys 'tail -f /var/log/syslog' C-m \; \
+  split-window -v \; \
+  split-window -h \; \
+  send-keys 'htop' C-m \;
