@@ -135,6 +135,8 @@ export TERM=xterm-256color
 #Set bindkey for zsh-autosuggestions plugin
 #https://github.com/zsh-users/zsh-autosuggestions
 bindkey '^ ' autosuggest-accept
+#Set plugin config for oh-my-zsh fzf plugin
+export FZF_BASE=/usr/bin/fzf
 ##########
 #Aliases #
 ##########
