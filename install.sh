@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/bash
 
 #Define standard tools to be installed:
 tools="zsh neovim vim  tmux ranger stow wget curl git fzf"
