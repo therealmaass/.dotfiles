@@ -8,9 +8,11 @@ which $tools > /dev/null 2>&1
 
 if [ $? != 0 ]; then
     if [ -f /etc/os-release ]; then
-        OS=$(cat /etc/os-release | grep "ID_LIKE" | cut -d= -f2)
+        #Source /etc/os-release to use variable to determine which os is used. E.g. $ID debian, linuxmint etc.
+        source /etc/os-release
+        OS=$ID
         echo $OS
-        if [ "$OS" = "debian" ]|| [ "$OS" = "ubuntu" ]; then
+        if [ "$OS" = "debian" ]|| [ "$OS" = "ubuntu" ] || [ "$OS" = "linuxmint" ]; then
             echo "##############################################"
             echo "# Installing standard tools:                 #"
             echo "$toolsprint"
