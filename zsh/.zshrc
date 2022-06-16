@@ -137,6 +137,8 @@ export TERM=xterm-256color
 bindkey '^ ' autosuggest-accept
 #Set plugin config for oh-my-zsh fzf plugin
 export FZF_BASE=/usr/bin/fzf
+# Source FZF keybindings for zsh
+source /usr/share/doc/fzf/examples/key-bindings.zsh
 ##########
 #Aliases #
 ##########
