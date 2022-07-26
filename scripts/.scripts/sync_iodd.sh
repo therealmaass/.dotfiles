@@ -1,1 +1,1 @@
-rsync -avrPh --delete admin@labnas:/share/install/#tools/IODD_repo/ .
+rsync -avrPh --delete --ignore-errors admin@labnas:/share/install/#tools/IODD_repo/ .
