@@ -168,7 +168,8 @@ alias cp="cp -iv"
 # Set neovim (nvim) as a vim replacement
 alias vim=nvim
 alias v=nvim
-alias tmm="~/.tmm_3.1.16.1/tinyMediaManager.sh"
+alias aptdist="sudo apt-get update && sudo apt-get dist-upgrade"
+alias sshconfig="vim ~/.ssh/config"
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
