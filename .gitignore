@@ -3,8 +3,11 @@ ranger/.config/ranger/colorschemes/__init__.py
 ranger/.config/ranger/colorschemes/__pycache__/
 ranger_wsl/.config/ranger/colorschemes/__init__.py
 ranger_wsl/.config/ranger/colorschemes/__pycache__/
+ranger_wsl/.config/ranger/colorschemes/__pycache__/__init__.cpython-38.opt-1.pyc
+ranger_wsl/.config/ranger/colorschemes/__pycache__/tatooka.cpython-38.opt-1.pyc
 # ignore ranger plugin specific temp files:
 ranger/.config/ranger/plugins/__init__.py
 ranger/.config/ranger/plugins/__pycache__/
 ranger_wsl/.config/ranger/plugins/__init__.py
 ranger_wsl/.config/ranger/plugins/__pycache__/
+ranger_wsl/.config/ranger/plugins/__pycache__/__init__.cpython-38.opt-1.pyc

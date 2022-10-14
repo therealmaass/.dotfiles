@@ -125,7 +125,8 @@ bindkey -v '^?' backward-delete-char
 export MANPATH="/usr/local/man:$MANPATH"
 # Setting custom scripts folder into $PATH
 PATH=$PATH:$HOME/.scripts
-#eval "$(sh "$HOME/.wsl/eopen-ecd-0.12.0-x64/init.sh")"
+# Add ~/.local folder into $PATH
+PATH=$PATH:~/.local/bin
 #Set vim to default Editor
 export VISUAL=vim
 export EDITOR=vim
@@ -134,6 +135,9 @@ export TERM=xterm-256color
 #Set bindkey for zsh-autosuggestions plugin
 #https://github.com/zsh-users/zsh-autosuggestions
 bindkey '^ ' autosuggest-accept
+# For Loading the SSH Key into WSL
+/usr/bin/keychain -q --nogui $HOME/.ssh/work.ed25519
+source $HOME/.keychain/$HOST-sh
 ##########
 #Aliases #
 ##########
