@@ -1,1 +1,1 @@
-rsync vz /mnt/d/user_soeren/sciebo/data/tools/ansible/ /home/soeren/ansible/
+rsync vz /mnt/c/Users/F06-Admin/sciebo/data/tools/ansible/ $HOME/ansible/
