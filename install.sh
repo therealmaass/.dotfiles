@@ -12,7 +12,7 @@ if [ $? != 0 ]; then
         source /etc/os-release
         OS=$ID
         echo $OS
-        if [ "$OS" = "debian" ]|| [ "$OS" = "ubuntu" ] || [ "$OS" = "linuxmint" ]; then
+        if [ "$OS" = "debian" ]|| [ "$OS" = "ubuntu" ] || [ "$OS" = "linuxmint" ] || [ "$OS" = "pop" ]; then
             echo "##############################################"
             echo "# Installing standard tools:                 #"
             echo "$toolsprint"
