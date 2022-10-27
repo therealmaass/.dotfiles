@@ -190,6 +190,13 @@ map <right> :bn<cr>
 map <left> :bp<cr>
 "Exit insert mode with jj
 inoremap jj <ESC>
+"Custom keymapping for coding on german keyboards:
+inoremap ö (
+inoremap Ö )
+inoremap ä [
+inoremap Ä ]
+inoremap ü {
+inoremap Ü }
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugin manager
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
