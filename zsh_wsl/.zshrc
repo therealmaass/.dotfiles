@@ -174,6 +174,9 @@ alias vim=nvim
 alias v=nvim
 alias aptdist="sudo apt-get update && sudo apt-get dist-upgrade"
 alias sshconfig="vim ~/.ssh/config"
+alias nk="~/.scripts/xmod_keymappings_normal.sh"
+alias ck="~/.scripts/xmod_keymappings_coding.sh"
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
