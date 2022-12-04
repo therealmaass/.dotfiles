@@ -218,6 +218,9 @@ Plug 'vimwiki/vimwiki'
 "Retro groove color scheme for Vim
 " see: https://github.com/morhetz/gruvbox
 Plug 'morhetz/gruvbox'
+"A tree explorer plugin for vim.
+" resource: https://github.com/preservim/nerdtree
+Plug 'preservim/nerdtree'
 call plug#end()
 "Gruvbox colorscheme initialization
 autocmd vimenter * ++nested colorscheme gruvbox
