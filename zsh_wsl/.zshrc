@@ -145,7 +145,10 @@ source $HOME/.keychain/$HOST-sh
 alias zshconfig="vim ~/.zshrc"
 #Open .tmux.conf in vim
 alias tmuxconfig="vim ~/.tmux.conf"
+#Open rcn.conf in vim
 alias rangerconfig="vim ~/.config/ranger/rc.conf"
+#Open .vimrc in vim
+alias vimconfig="vim ~/.vimrc"
 #List tmux sessions
 alias tls="tmux ls"
 #Attaches tmux to the last session; creates a new session if none exists
