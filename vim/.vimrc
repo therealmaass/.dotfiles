@@ -10,8 +10,6 @@ let mapleader = " "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Standard Stuff 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"colorscheme jellybeans
-"filetype plugin indent on
 filetype off
 set nocompatible
 set autoindent
@@ -23,13 +21,11 @@ set showmatch
 set showcmd
 set ruler
 set nojoinspaces
-"set cpo+=$
 set whichwrap+=<,>
 set mousehide
 set hlsearch
 set incsearch
 set ignorecase
-"set clipboard^=unnamed,unnamedplus
 set clipboard=unnamedplus
 set hidden
 set cmdheight=2 
@@ -46,8 +42,6 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugin configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Set prefix for plugin https://github.com/easymotion/vim-easymotion
-map <Leader> <Plug>(easymotion-prefix)
 "Set prefix f for plugin https://github.com/junegunn/goyo.vim for disctraction free buffer view 
 map <Leader>f :Goyo \| set linebreak<CR>
 "Set Tab jumping for https://github.com/SirVer/ultinips
@@ -165,9 +159,9 @@ let g:mkdp_filetypes = ['markdown']
 "<Plug>MarkdownPreviewToggle
 
 " example
-nmap <C-s> <Plug>MarkdownPreview
-nmap <M-s> <Plug>MarkdownPreviewStop
-nmap <C-p> <Plug>MarkdownPreviewToggle
+"nmap <C-s> <Plug>MarkdownPreview
+"nmap <M-s> <Plug>MarkdownPreviewStop
+"nmap <C-p> <Plug>MarkdownPreviewToggle
 "###############################################################
 " PLUGIN CONFIGURATION FOR fern.vim
 " https://github.com/lambdalisue/fern.vim for reference
@@ -255,8 +249,6 @@ inoremap jj <ESC>
 " => Plugin manager
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
-"Simple Motions https://github.com/easymotion/vim-easymotion
-"Plug 'easymotion/vim-easymotion'
 "Disctraction-free writing in vim https://github.com/junegunn/goyo.vim
 Plug 'junegunn/goyo.vim'
 "Codesnippets in vim https://github.com/SirVer/ultisnips
