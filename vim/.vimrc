@@ -208,20 +208,20 @@ function! FernInit() abort
         \   "\<Plug>(fern-action-expand)",
         \   "\<Plug>(fern-action-collapse)",
         \ )
-  "nmap <buffer> <CR> <Plug>(fern-my-open-expand-collapse)
+"  nmap <buffer> <CR> <Plug>(fern-my-open-expand-collapse)
   nmap <buffer> o <Plug>(fern-my-open-expand-collapse)
   nmap <buffer> <2-LeftMouse> <Plug>(fern-my-open-expand-collapse)
   nmap <buffer> n <Plug>(fern-action-new-path)
   nmap <buffer> d <Plug>(fern-action-remove)
   nmap <buffer> m <Plug>(fern-action-move)
   nmap <buffer> M <Plug>(fern-action-rename)
-  nmap <buffer> h <Plug>(fern-action-hidden-toggle)
+  nmap <buffer> z <Plug>(fern-action-hidden-toggle)
   nmap <buffer> r <Plug>(fern-action-reload)
-"  nmap <buffer> k <Plug>(fern-action-mark-toggle)
+  nmap <buffer> - <Plug>(fern-action-mark-toggle)
   nmap <buffer> b <Plug>(fern-action-open:split)
   nmap <buffer> v <Plug>(fern-action-open:vsplit)
-  nmap <buffer><nowait> < <Plug>(fern-action-leave)
-  nmap <buffer><nowait> > <Plug>(fern-action-enter)
+  nmap <buffer><nowait> h <Plug>(fern-action-leave)
+  nmap <buffer><nowait> l <Plug>(fern-action-enter)
 endfunction
 
 augroup FernGroup
@@ -256,7 +256,7 @@ inoremap jj <ESC>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 "Simple Motions https://github.com/easymotion/vim-easymotion
-Plug 'easymotion/vim-easymotion'
+"Plug 'easymotion/vim-easymotion'
 "Disctraction-free writing in vim https://github.com/junegunn/goyo.vim
 Plug 'junegunn/goyo.vim'
 "Codesnippets in vim https://github.com/SirVer/ultisnips
