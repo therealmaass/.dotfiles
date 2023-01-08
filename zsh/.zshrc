@@ -125,7 +125,7 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 export MANPATH="/usr/local/man:$MANPATH"
 # Setting custom scripts folder into $PATH
-PATH=$PATH:$HOME/.scripts
+PATH=$PATH:$HOME/.scripts:/usr/sbin
 #eval "$(sh "$HOME/.wsl/eopen-ecd-0.12.0-x64/init.sh")"
 #Set vim to default Editor
 export VISUAL=vim
