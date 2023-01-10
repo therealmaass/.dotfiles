@@ -11,13 +11,16 @@
 # - Setup a rclone configuration in ~/.config/rclone
 # - Setup a restic reposority
 DB_BACKUP_DIR=/tmp/db_backup
-RESTIC_PW_LOCATION=/foo/bar/restic-password
-RESTIC_REPO_LOCATION=rclone:foo-bar:/data/backups/
-CONTAINER_DATA_DIRS="/foo /bar/ $DB_BACKUP_DIR"
+DB_BACKUP_DAYS=2
+#RESTIC_PW_LOCATION=~/.config/restic/restic-password
+#RESTIC_REPO_LOCATION=rclone:sciebo-smaass:/data/backups/raspi01
+RESTIC_CONFIG_FILE=~/.config/restic/.restic-keys
+CONTAINER_DATA_DIRS="/app $DB_BACKUP_DIR"
 
-export RESTIC_PASSWORD_FILE=$RESTIC_PW_LOCATION
-export RESTIC_REPOSITORY=$RESTIC_REPO_LOCATION
-
+#export RESTIC_PASSWORD_FILE=$RESTIC_PW_LOCATION
+#export RESTIC_REPOSITORY=$RESTIC_REPO_LOCATION
+#Source RESTIC_PASSWORD and RESTIC_REPOSITORY from $RESTIC_CONFIG_FILE
+source $RESTIC_CONFIG_FILE
 # backup all mysql/mariadb containers
 
 CONTAINER=$(docker ps --format '{{.Names}}:{{.Image}}' | grep -v 'mysql\|mariadb' | cut -d":" -f1)
@@ -37,11 +40,11 @@ if [[ $(echo "$DB_CONTAINER" | wc -l) -ge 1 ]]; then
 
         docker exec -e MYSQL_DATABASE=$MYSQL_DATABASE -e MYSQL_PWD=$MYSQL_PWD \
             $i /usr/bin/mysqldump -u root $MYSQL_DATABASE \
-            | gzip > $BACKUPDIR/$i-$MYSQL_DATABASE-$(date +"%Y%m%d%H%M").sql.gz
+            | gzip > $DB_BACKUP_DIR/$i-$MYSQL_DATABASE-$(date +"%Y%m%d%H%M").sql.gz
 
-        OLD_BACKUPS=$(ls -1 $BACKUPDIR/$i*.gz |wc -l)
-        if [ $OLD_BACKUPS -gt $DAYS ]; then
-            find $BACKUPDIR -name "$i*.gz" -daystart -mtime +$DAYS -delete
+        OLD_BACKUPS=$(ls -1 $DB_BACKUP_DIR/$i*.gz |wc -l)
+        if [ $OLD_BACKUPS -gt $DB_BACKUP_DAYS ]; then
+            find $DB_BACKUP_DIR -name "$i*.gz" -daystart -mtime +$DB_BACKUP_DAYS -delete
         fi
     done
 fi
@@ -55,6 +58,7 @@ for i in $CONTAINER; do
 done
 
 restic backup $CONTAINER_DATA_DIRS --tag $(hostname)
+restic forget --prune --tag $(hostname) --keep-within 14d 
 
 sleep 10
 
