@@ -4,7 +4,7 @@
 export GOGC=20
 
 # run unlock script first (includes setting env vars)
-. /home/edaly/restic_backup/restic_unlock.sh
+source ~/.config/restic/restic_env.sh
 
 echo "-"
 echo "-"

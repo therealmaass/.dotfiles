@@ -10,19 +10,25 @@
 # - Installed rclone
 # - Setup a rclone configuration in ~/.config/rclone
 # - Setup a restic reposority
+#----------------------------------------------------------------
+# run repo(includes setting env vars)
+echo "-"
+echo "-"
+echo "Loading env varibles for restic"
+echo "---------------------------"
+source ~/.config/restic/restic_env.sh
+
+#Set backup dir for database dumps
 DB_BACKUP_DIR=/tmp/db_backup
 DB_BACKUP_DAYS=2
-#RESTIC_PW_LOCATION=~/.config/restic/restic-password
-#RESTIC_REPO_LOCATION=rclone:sciebo-smaass:/data/backups/raspi01
-RESTIC_CONFIG_FILE=~/.config/restic/.restic-keys
-CONTAINER_DATA_DIRS="/app $DB_BACKUP_DIR"
+#Set backups dirs for restic
+CONTAINER_DATA_DIRS="$RESTIC_INCLUDE_PATHS $DB_BACKUP_DIR"
 
-#export RESTIC_PASSWORD_FILE=$RESTIC_PW_LOCATION
-#export RESTIC_REPOSITORY=$RESTIC_REPO_LOCATION
-#Source RESTIC_PASSWORD and RESTIC_REPOSITORY from $RESTIC_CONFIG_FILE
-source $RESTIC_CONFIG_FILE
-# backup all mysql/mariadb containers
-
+echo "-"
+echo "-"
+echo "Running scheduled backup ($(date))..."
+echo "---------------------------"
+# Identify which containers are database container and which are not
 CONTAINER=$(docker ps --format '{{.Names}}:{{.Image}}' | grep -v 'mysql\|mariadb' | cut -d":" -f1)
 DB_CONTAINER=$(docker ps --format '{{.Names}}:{{.Image}}' | grep 'mysql\|mariadb' | cut -d":" -f1)
 
@@ -57,6 +63,10 @@ for i in $CONTAINER; do
     docker stop $i
 done
 
+echo "-"
+echo "-"
+echo "Running scheduled backup ($(date))..."
+echo "---------------------------"
 restic backup $CONTAINER_DATA_DIRS --tag $(hostname)
 restic forget --prune --tag $(hostname) --keep-within 14d 
 
@@ -67,3 +77,6 @@ for i in $CONTAINER; do
 done
 
 echo "$TIMESTAMP Backup completed"
+echo ""
+echo "Finished unlocking $(date)"
+echo "---------------------------"
