@@ -126,6 +126,8 @@ bindkey -v '^?' backward-delete-char
 export MANPATH="/usr/local/man:$MANPATH"
 # Setting custom scripts folder into $PATH
 PATH=$PATH:$HOME/.scripts:/usr/sbin
+# Setting restic scripts into $PATH
+PATH=$PATH:$HOME/.config/restic
 #eval "$(sh "$HOME/.wsl/eopen-ecd-0.12.0-x64/init.sh")"
 #Set vim to default Editor
 export VISUAL=vim
