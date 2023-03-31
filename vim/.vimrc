@@ -39,6 +39,8 @@ set relativenumber
 set wildmode=longest,list,full
 "fix indentation in yaml files (yaml req. 2 space indentation) important for docker compose
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+" set auto spellchecking for markdown (*.md) files
+autocmd BufRead,BufNewFile *.md setlocal spell spelllang=de_de
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugin configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
