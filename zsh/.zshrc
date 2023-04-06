@@ -96,6 +96,12 @@ SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
 # Ranger Script: after exit Ranger switch to last ranger dir
 source $HOME/.config/ranger/shell_automatic_cd
+# Shell function for Staying on the last visited directory when quitting lf
+LFCD=$HOME/.config/lf/lfcd.sh
+
+if [ -f "$LFCD" ]; then
+    source "$LFCD"
+fi
 # WSL-Scripts: start ~/.wsl/startup.sh which starts necesseary services to run withoud sudo password auth:
 # For NFS:
 # - sudo service rpcbind start
@@ -148,7 +154,10 @@ source /usr/share/doc/fzf/examples/key-bindings.zsh
 alias zshconfig="vim ~/.zshrc"
 #Open .tmux.conf in vim
 alias tmuxconfig="vim ~/.tmux.conf"
+#Open rc.conf in vim
 alias rangerconfig="vim ~/.config/ranger/rc.conf"
+#Open lfrc in vim
+alias lfconfig="vim ~/.config/lf/lfrc"
 # Set CapsLock key to behave like a CTRL key
 alias capslockswap="setxkbmap -layout de -option ctrl:nocaps"
 #List tmux sessions
@@ -182,6 +191,7 @@ alias aptdist="sudo apt-get update && sudo apt-get dist-upgrade"
 alias sshconfig="vim ~/.ssh/config"
 alias nk="~/.scripts/xmod_keymappings_normal.sh"
 alias ck="~/.scripts/xmod_keymappings_coding.sh"
+alias lf=lfcd
 # Connect to rasp01 via Wireguard
 alias wgraspi01="sudo wg-quick up ~/sciebo/data/tools/wireguard_raspi01/peer1/peer1.conf"
 alias wgraspi01down="sudo wg-quick down ~/sciebo/data/tools/wireguard_raspi01/peer1/peer1.conf"
