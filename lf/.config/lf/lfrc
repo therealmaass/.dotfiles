@@ -1,0 +1,92 @@
+# Basic Settings
+set ignorecase true
+set sortby time
+
+#set reverse true # reverse sorting order
+
+# Commands
+
+# trash command with confirmation
+
+cmd delete ${{
+	clear; tput cup $(($(tput lines)/3)); tput bold
+	set -f
+	printf "%s\n\t" "$fx"
+	printf "delete?[y/N]"
+	read ans
+	[ $ans = "y" ] && rm -rf -- $fx
+}}
+# extract command using atool
+cmd extract ${{
+	clear; tput cup $(($(tput lines)/3)); tput bold
+	set -f
+	printf "%s\n\t" "$fx"
+	printf "extract?[y/N]"
+	read ans
+	[ $ans = "y" ] && aunpack "$fx"
+}}
+
+# custom paste command using rsync/mv
+cmd pastersync &{{
+    load=$(cat ~/.local/share/lf/files)
+    mode=$(echo "$load" | sed -n '1p')
+    list=$(echo "$load" | sed '1d')
+    if [ $mode = 'copy' ]; then
+        rsync -av --ignore-existing --progress $list . \
+        | stdbuf -i0 -o0 -e0 tr '\r' '\n' \
+        | while read line; do
+            lf -remote "send $id echo $line"
+        done
+    elif [ $mode = 'move' ]; then
+        mv -n $list .
+    fi
+    lf -remote 'send load'
+    lf -remote 'send clear'
+}}
+
+cmd copyto ${{
+	clear; tput cup $(($(tput lines)/3)); tput bold
+	set -f
+	clear; echo "Copy to where?"
+	dest="$(sed -e 's/\s*#.*//' -e '/^$/d' -e 's/^\S*\s*//' ${XDG_CONFIG_HOME:-$HOME/.config}/shell/bm-dirs | fzf | sed 's|~|$HOME|')" &&
+	for x in $fx; do
+		eval cp -ivr \"$x\" \"$dest\"
+	done &&
+	notify-send "📋 File(s) copied." "File(s) copies to $dest."
+}}
+
+cmd sendtoomv ${{
+    rsync -avr --progress $fs soeren@omv:/srv/dev-disk-by-uuid-d730d204-d9fc-4bed-a456-2d26b5a190be/media/temp/
+    }}
+
+cmd openguife ${{
+    nemo $PWD
+    }}
+# Bindings
+# Remove some defaults
+map y
+map d
+map p
+
+# Basic functions
+map yy copy
+map dd cut
+map pp paste
+map pr pastersync
+map D delete
+map E extract
+map C copyto
+map xomv sendtoomv
+
+# Navigation
+map gsc cd ~/sciebo
+map gdl cd ~/Downloads
+map gdd cd ~/Schreibtisch
+map gdc cd ~/Dokumente
+map gim cd ~/Bilder
+map gM cd /mnt
+map gme cd /media
+map gsa cd ~/.sabnzbd/complete
+map gmo cd ~/.sabnzbd/movies
+map gtv cd ~/.sabnzbd/tv
+map ge openguife
