@@ -1,6 +1,12 @@
 # Basic Settings
 set ignorecase true
 set sortby time
+set icons true
+set previewer ctpv
+set cleaner ctpvclear
+&ctpv -s $id
+&ctpvquit $id
+
 
 #set reverse true # reverse sorting order
 
@@ -77,6 +83,7 @@ map D delete
 map E extract
 map C copyto
 map xomv sendtoomv
+map e $nvim "$f"
 
 # Navigation
 map gsc cd ~/sciebo

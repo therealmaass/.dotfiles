@@ -192,6 +192,7 @@ alias sshconfig="vim ~/.ssh/config"
 alias nk="~/.scripts/xmod_keymappings_normal.sh"
 alias ck="~/.scripts/xmod_keymappings_coding.sh"
 alias lf=lfcd
+alias bat=batcat
 # Connect to rasp01 via Wireguard
 alias wgraspi01="sudo wg-quick up ~/sciebo/data/tools/wireguard_raspi01/peer1/peer1.conf"
 alias wgraspi01down="sudo wg-quick down ~/sciebo/data/tools/wireguard_raspi01/peer1/peer1.conf"

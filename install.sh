@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Define standard tools to be installed:
-tools="zsh vim tmux ranger stow wget curl git fzf htop"
+tools="zsh vim tmux ranger stow wget curl git fzf htop bat"
 toolsprint="# ${tools}     #"
 cd ~
 which $tools > /dev/null 2>&1
