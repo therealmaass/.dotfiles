@@ -91,6 +91,7 @@ map gdl cd ~/Downloads
 map gdd cd ~/Schreibtisch
 map gdc cd ~/Dokumente
 map gim cd ~/Bilder
+map gr cd /
 map gM cd /mnt
 map gme cd /media
 map gsa cd ~/.sabnzbd/complete
