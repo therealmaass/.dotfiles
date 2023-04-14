@@ -4,9 +4,9 @@ set sortby natural
 set icons true
 set previewer ctpv
 set cleaner ctpvclear
-set ifs "\n"
 &ctpv -s $id
 &ctpvquit $id
+set ifs "\n"
 
 
 #set reverse true # reverse sorting order
@@ -14,7 +14,6 @@ set ifs "\n"
 # Commands
 
 # trash command with confirmation
-
 cmd delete ${{
 	clear; tput cup $(($(tput lines)/3)); tput bold
 	set -f
@@ -23,14 +22,30 @@ cmd delete ${{
 	read ans
 	[ $ans = "y" ] && rm -rf -- $fx
 }}
-# extract command using atool
+
+# extrat compress files
 cmd extract ${{
-	clear; tput cup $(($(tput lines)/3)); tput bold
-	set -f
-	printf "%s\n\t" "$fx"
-	printf "extract?[y/N]"
-	read ans
-	[ $ans = "y" ] && aunpack "$fx"
+    set -f
+    archive="${fx%.*}"
+    mkdir "$archive"
+    cd "$archive"
+    case $f in
+        *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
+        *.tar.gz|*.tgz) tar xzvf $f;;
+        *.tar.xz|*.txz) tar xJvf $f;;
+        *.zip) unzip -O gbk $f;;
+        *.rar) unrar x $f;;
+        *.7z) 7z x $f;;
+    esac
+}}
+
+# compress current file or selected files with zip
+cmd zip ${{
+    set -f
+    mkdir $1
+    cp -r $fx $1
+    zip -r $1.zip $1
+    rm -rf $1
 }}
 
 # custom paste command using rsync/mv
@@ -51,17 +66,6 @@ cmd pastersync &{{
     lf -remote 'send clear'
 }}
 
-#cmd copyto ${{
-#	clear; tput cup $(($(tput lines)/3)); tput bold
-#	set -f
-#	clear; echo "Copy to where?"
-#	dest="$(cat ${XDG_CONFIG_HOME:-$HOME/.config}/shell/bm-dirs | fzf | sed 's|~|$HOME|')" &&
-#	for x in $fx; do
-#		eval cp -ivr \"$x\" \"$dest\"
-#	done &&
-#	notify-send "📋 File(s) copied." "File(s) copies to $dest."
-#}}
-
 cmd copyto ${{
 	clear; tput cup $(($(tput lines)/3)); tput bold
 	set -f
@@ -74,13 +78,45 @@ cmd copyto ${{
 	notify-send "📋 File(s) copied." "File(s) copies to $dest."
 }}
 
+cmd moveto ${{
+	clear; tput cup $(($(tput lines)/3)); tput bold
+	set -f
+	clear; echo "Move to where?"
+	dest="$(cat $HOME/.config/shell/bm-dirs | fzf )" &&
+	for x in $fx; do
+        echo "$x"
+		eval mv -iv \"$x\" \"$dest\"
+	done &&
+	notify-send "📋 File(s) moved." "File(s) moved to $dest."
+}}
+
 cmd sendtoomv ${{
     rsync -avr --progress $fs soeren@omv:/srv/dev-disk-by-uuid-d730d204-d9fc-4bed-a456-2d26b5a190be/media/temp/
     }}
 
+cmd sendtoraspi01 ${{
+    rsync -avr --progress $fs soeren@raspi01:/home/soeren/
+    }}
 cmd openguife ${{
     nemo $PWD
     }}
+
+cmd bulkrename $vidir
+
+cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
+
+#Combining fzf with ripgrep, you can interactively search in the contents of files under the current directory and select a file from the results:
+cmd fzf_search ${{
+    res="$( \
+        RG_PREFIX="rg --column --line-number --no-heading --color=always \
+            --smart-case "
+        FZF_DEFAULT_COMMAND="$RG_PREFIX ''" \
+            fzf --bind "change:reload:$RG_PREFIX {q} || true" \
+            --ansi --layout=reverse --header 'Search in files' \
+            | cut -d':' -f1
+    )"
+    [ ! -z "$res" ] && lf -remote "send $id select \"$res\""
+}}
 # Bindings
 # Remove some defaults
 map y
@@ -94,9 +130,15 @@ map pp paste
 map pr pastersync
 map D delete
 map E extract
+map Z push :zip<space>
 map C copyto
+map M moveto
+map B bulkrename
+map <c-n> push :mkdir<space>
 map xomv sendtoomv
+map xrpi1 sendtoraspi01
 map e $nvim "$f"
+map <c-s> :fzf_search
 # Navigation
 map gsc cd ~/sciebo
 map gdl cd ~/Downloads
