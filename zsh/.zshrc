@@ -134,6 +134,8 @@ export MANPATH="/usr/local/man:$MANPATH"
 PATH=$PATH:$HOME/.scripts:/usr/sbin
 # Setting restic scripts into $PATH
 PATH=$PATH:$HOME/.config/restic
+# Add ~/.local/bin to $PATH
+PATH=$PATH:$HOME/.local/bin
 #eval "$(sh "$HOME/.wsl/eopen-ecd-0.12.0-x64/init.sh")"
 #Set vim to default Editor
 export VISUAL=vim
