@@ -198,6 +198,8 @@ alias bat=batcat
 # Connect to rasp01 via Wireguard
 alias wgraspi01="sudo wg-quick up ~/sciebo/data/tools/wireguard_raspi01/peer1/peer1.conf"
 alias wgraspi01down="sudo wg-quick down ~/sciebo/data/tools/wireguard_raspi01/peer1/peer1.conf"
+alias aptcustom="comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)"
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 

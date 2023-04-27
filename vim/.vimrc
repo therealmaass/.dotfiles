@@ -45,7 +45,7 @@ autocmd BufRead,BufNewFile *.md setlocal spell spelllang=de_de
 " => Plugin configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Set prefix f for plugin https://github.com/junegunn/goyo.vim for disctraction free buffer view 
-map <Leader>f :Goyo \| set linebreak<CR>
+map <Leader>g :Goyo \| set linebreak<CR>
 "Set Tab jumping for https://github.com/SirVer/ultinips
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
@@ -227,6 +227,17 @@ augroup FernGroup
 augroup END
 
 "###############################################################
+"###############################################################
+" PLUGIN CONFIGURATION FOR vimwiki.vim
+" https://github.com/vimwiki/vimwiki for reference
+"###############################################################
+" ############    KEYMAPPINGS for vimwiki.vim    ##########
+"###############################################################
+
+let g:vimwiki_list = [{'path': '~/sciebo/data/tools/obsidian_vault/soerens_wiki',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim keymappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
