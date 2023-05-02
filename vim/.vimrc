@@ -258,6 +258,10 @@ map <right> :bn<cr>
 map <left> :bp<cr>
 "Exit insert mode with jj
 inoremap jj <ESC>
+"Insert current date in format: "# Di 2023-05-02 16:15:36+0200"
+"map <leader>D :put =strftime('# %a %Y-%m-%d %H:%M:%S%z')<CR>
+"Insert current date in format: "2023-05-02"
+map <leader>D :put =strftime('%Y-%m-%d')<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugin manager
