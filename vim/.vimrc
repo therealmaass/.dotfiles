@@ -234,10 +234,14 @@ augroup END
 " ############    KEYMAPPINGS for vimwiki.vim    ##########
 "###############################################################
 
-let g:vimwiki_list = [{'path': '~/sciebo/data/tools/obsidian_vault/soerens_wiki',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_list = [
+            \{'path': '~/sciebo/data/tools/obsidian_vault/soerens_wiki', 'syntax': 'markdown', 'ext': '.md'},
+            \{'path': '~/sciebo/data/tools/obsidian_vault/soerens_wiki/tech', 'syntax': 'markdown', 'ext': '.md'},
+            \{'path': '~/sciebo/data/tools/obsidian_vault/soerens_wiki/tech/linux', 'syntax': 'markdown', 'ext': '.md'},
+            \{'path': '~/sciebo/data/tools/obsidian_vault/soerens_wiki/tech/windows', 'syntax': 'markdown', 'ext': '.md'},
+            \{'path': '~/sciebo/data/tools/obsidian_vault/soerens_wiki/projects', 'syntax': 'markdown', 'ext': '.md'}]
 
-
+nmap <Leader>wp :Files ~/sciebo/data/tools/obsidian_vault/soerens_wiki/<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim keymappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -264,7 +268,8 @@ inoremap jj <ESC>
 map <leader>D :put =strftime('%Y-%m-%d')<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Plugin manager
+" Plugin manager
+" => Installed with vim-plug
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 "Disctraction-free writing in vim https://github.com/junegunn/goyo.vim
@@ -291,6 +296,9 @@ Plug 'morhetz/gruvbox'
 "General purpose asynchronous tree viewer written in Pure Vim script
 "resource: https://github.com/lambdalisue/fern.vim
 Plug 'lambdalisue/fern.vim'
+"Fuzzy finding with vim featuring fzf.vim
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 "Gruvbox colorscheme initialization
 autocmd vimenter * ++nested colorscheme gruvbox
