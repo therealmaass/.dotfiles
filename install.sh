@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Define standard tools to be installed:
-tools="zsh tmux stow wget curl git fzf htop bat moreutils 7zip jq progress ripgrep"
+tools="zsh tmux stow wget curl git fzf htop bat moreutils 7zip jq progress ripgrep python3 python3-pip"
 toolsprint="# ${tools}     #"
 cd ~
 which $tools > /dev/null 2>&1
