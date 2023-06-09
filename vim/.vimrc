@@ -271,12 +271,6 @@ map <leader>D :put =strftime('%Y-%m-%d')<CR>
 " Plugin manager
 " => Installed with vim-plug
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Install vim-plug if not found
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-endif
-
 call plug#begin('~/.vim/plugged')
 "Disctraction-free writing in vim https://github.com/junegunn/goyo.vim
 Plug 'junegunn/goyo.vim'
