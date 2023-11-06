@@ -241,6 +241,7 @@ let g:vimwiki_list = [
             \{'path': '~/sciebo/data/tools/obsidian_vault/soerens_wiki/tech/windows', 'syntax': 'markdown', 'ext': '.md'},
             \{'path': '~/sciebo/data/tools/obsidian_vault/soerens_wiki/projects', 'syntax': 'markdown', 'ext': '.md'},
             \{'path': '~/sciebo/data/tools/obsidian_vault/soerens_wiki/work', 'syntax': 'markdown', 'ext': '.md'},
+            \{'path': '~/sciebo/data/tools/obsidian_vault/soerens_wiki/haus', 'syntax': 'markdown', 'ext': '.md'},
             \{'path': '~/sciebo/data/tools/obsidian_vault/soerens_wiki/ha', 'syntax': 'markdown', 'ext': '.md'}]
 
 nmap <Leader>wp :Files ~/sciebo/data/tools/obsidian_vault/soerens_wiki/<CR>

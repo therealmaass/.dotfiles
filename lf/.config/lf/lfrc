@@ -91,7 +91,7 @@ cmd moveto ${{
 }}
 
 cmd sendtoomv ${{
-    rsync -avr --progress $fs soeren@omv:/srv/dev-disk-by-uuid-d730d204-d9fc-4bed-a456-2d26b5a190be/media/temp/
+    rsync -avr --progress $fs soeren@omv:/srv/dev-disk-by-uuid-93250918-f8ee-4a69-99ef-ee5d8fd50fe8/media/temp/
     }}
 
 cmd sendtoraspi01 ${{
