@@ -12,5 +12,5 @@ ranger_wsl/.config/ranger/plugins/__init__.py
 ranger_wsl/.config/ranger/plugins/__pycache__/
 ranger_wsl/.config/ranger/plugins/__pycache__/__init__.cpython-38.opt-1.pyc
 # ignore vim plugged folder files:
-vim/.vim/plugged/*
-plugged/*
+vim/.vim/plugged/
+plugged/
