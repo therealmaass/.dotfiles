@@ -90,8 +90,8 @@ cmd moveto ${{
 	notify-send "📋 File(s) moved." "File(s) moved to $dest."
 }}
 
-cmd sendtoomv ${{
-    rsync -avr --progress $fs soeren@omv:/srv/dev-disk-by-uuid-93250918-f8ee-4a69-99ef-ee5d8fd50fe8/media/temp/
+cmd sendtoprox ${{
+    rsync -avr --progress $fs root@prox:/tank0/data/media/temp/
     }}
 
 cmd sendtoraspi01 ${{
@@ -136,7 +136,7 @@ map M moveto
 map B bulkrename
 map A rename
 map <c-n> push :mkdir<space>
-map xomv sendtoomv
+map xpro sendtoprox
 map xrpi1 sendtoraspi01
 map e $nvim "$f"
 map <c-s> :fzf_search
