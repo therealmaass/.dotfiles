@@ -134,6 +134,7 @@ map Z push :zip<space>
 map C copyto
 map M moveto
 map B bulkrename
+map U !du -csh *
 map A rename
 map <c-n> push :mkdir<space>
 map xpro sendtoprox
