@@ -160,6 +160,8 @@ alias tmuxconfig="vim ~/.tmux.conf"
 alias rangerconfig="vim ~/.config/ranger/rc.conf"
 #Open lfrc in vim
 alias lfconfig="vim ~/.config/lf/lfrc"
+#Open vimrc in vim
+alias vimconfig="vim ~/.vimrc"
 # Set CapsLock key to behave like a CTRL key
 alias capslockswap="setxkbmap -layout de -option ctrl:nocaps"
 #List tmux sessions
