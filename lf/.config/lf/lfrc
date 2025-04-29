@@ -4,6 +4,10 @@ set sortby natural
 set icons true
 set previewer ctpv
 set cleaner ctpvclear
+set relativenumber
+#set number
+set info size
+set dircounts
 &ctpv -s $id
 &ctpvquit $id
 set ifs "\n"
