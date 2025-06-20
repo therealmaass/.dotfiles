@@ -176,6 +176,7 @@ let g:loaded_netrw  = 1
 let g:loaded_netrwPlugin = 1
 let g:loaded_netrwSettings = 1
 let g:loaded_netrwFileHandlers = 1
+let g:fern_disable_startup_warnings = 1
 
 augroup my-fern-hijack
   autocmd!
