@@ -213,6 +213,7 @@ function! FernInit() abort
   nmap <buffer> m <Plug>(fern-action-move)
   nmap <buffer> M <Plug>(fern-action-rename)
   nmap <buffer> N <Plug>(fern-action-new-file)
+  nmap <buffer> F <Plug>(fern-action-new-dir)
   nmap <buffer> z <Plug>(fern-action-hidden:toggle)
   nmap <buffer> r <Plug>(fern-action-reload)
   nmap <buffer> - <Plug>(fern-action-mark:toggle)
